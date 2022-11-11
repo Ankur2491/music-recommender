@@ -1,11 +1,13 @@
 <div class="container-fluid">
     <h2>Top of the Charts</h2>
     <div class="row">
-        <div *ngFor="let track of trackList" class="col-md-12">
+        <div *ngFor="let track of trackList; let i=index" class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{track.name}}</h5>
-                  <p class="card-text">{{track.artist}}</p>
+                  <h5 class="card-title">#{{i+1}} {{track.name}} - {{track.artist}}</h5>
+                  <!-- <p class="card-text">{{track.artist}}</p> -->
+                  <small>(Listened: {{track.playcount}} many times)</small>
+                  <br/>
                   <button class="btn btn-link" (click)="showVideo(track.name)">Show Video</button>
                   <div *ngIf="track.name==selected">
                     <iframe [src]="track.url" height="300" width="100%" allowfullscreen>
