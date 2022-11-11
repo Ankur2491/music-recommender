@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
 
   search() {
     if (this.searchText.length > 2) {
-      this.http.get(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.searchText}&api_key=7b9b811126f62cd662af3bd98bd57966&format=json`).subscribe(async (data: any)=>{
+      this.http.get(`https://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.searchText}&api_key=7b9b811126f62cd662af3bd98bd57966&format=json`).subscribe(async (data: any)=>{
         let tracks = data.results.trackmatches.track;
         for(let trObj of tracks){
           let obj: any = {'name': trObj.name, 'artist': trObj.artist};
