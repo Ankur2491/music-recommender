@@ -1,4 +1,13 @@
-<input type="text" class="form-control" [(ngModel)]="searchText" placeholder="search for a track" (keyup)="search()"/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="search for a track" style="margin-top: 10px;"/>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" (click)="search()" style="margin-top: 10px;">Search</button>
+        </div>
+    </div>
+</div>
 <div *ngIf="trackList.length>0" class="container-fluid">
     <hr/>
     <h5>Search Results</h5>
