@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let track of trackList" class="col-md-12">
+            <div class="card">
+                <iframe [src]="track.url">
+                </iframe>
+                <div class="card-body">
+                  <h5 class="card-title">{{track.name}}</h5>
+                  <p class="card-text">{{track.artist}}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
