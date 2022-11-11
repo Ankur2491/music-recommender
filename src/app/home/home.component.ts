@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { SafePipe } from '../safePipe';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +12,7 @@ export class HomeComponent implements OnInit {
   trackList: Array<any> = [];
   selected='';
 
-  constructor(private http: HttpClient, private safePipe: SafePipe, private _sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.http.get(`https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=7b9b811126f62cd662af3bd98bd57966&format=json`).subscribe(async (data: any)=>{
