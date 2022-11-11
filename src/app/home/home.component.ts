@@ -11,6 +11,7 @@ import { SafePipe } from '../safePipe';
 export class HomeComponent implements OnInit {
 
   trackList: Array<any> = [];
+  selected='';
 
   constructor(private http: HttpClient, private safePipe: SafePipe, private _sanitizer: DomSanitizer) { }
 
@@ -27,6 +28,9 @@ export class HomeComponent implements OnInit {
         })
       }
     })
+  }
+  showVideo(trackName: any){
+    this.selected = trackName;
   }
 
 }
